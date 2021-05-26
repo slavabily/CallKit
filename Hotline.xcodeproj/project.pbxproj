@@ -17,6 +17,7 @@
 		BB5C8CB21E0AFD5800029D74 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C8CB11E0AFD5800029D74 /* Call.swift */; };
 		BB5C8CB61E0AFD7C00029D74 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C8CB51E0AFD7C00029D74 /* CallManager.swift */; };
 		BB6E171E1E19572400A2AF91 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6E171D1E19572400A2AF91 /* Audio.swift */; };
+		F9D79980265E91F70081F588 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7997F265E91F70081F588 /* ProviderDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		BB5C8CB11E0AFD5800029D74 /* Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; tabWidth = 2; };
 		BB5C8CB51E0AFD7C00029D74 /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; tabWidth = 2; };
 		BB6E171D1E19572400A2AF91 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F9D7997F265E91F70081F588 /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				BB5C8C8E1E0AE13300029D74 /* AppDelegate.swift */,
+				F9D7997F265E91F70081F588 /* ProviderDelegate.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -181,8 +184,9 @@
 				TargetAttributes = {
 					BB5C8C8A1E0AE13300029D74 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = L6T2S9K4GS;
 						LastSwiftMigration = 1010;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -196,6 +200,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -234,6 +239,7 @@
 				BB5C8CA71E0AF37000029D74 /* NewCallViewController.swift in Sources */,
 				BB6E171E1E19572400A2AF91 /* Audio.swift in Sources */,
 				BB5C8C8F1E0AE13300029D74 /* AppDelegate.swift in Sources */,
+				F9D79980265E91F70081F588 /* ProviderDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,9 +382,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L6T2S9K4GS;
 				INFOPLIST_FILE = Hotline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Hotline;
@@ -395,9 +402,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L6T2S9K4GS;
 				INFOPLIST_FILE = Hotline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Hotline;
