@@ -112,5 +112,22 @@ extension ProviderDelegate: CXProviderDelegate {
     func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
         startAudio()
     }
+    
+    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+      // 1.
+      guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
+        action.fail()
+        return
+      }
+      
+      // 2.
+      stopAudio()
+      // 3.
+      call.end()
+      // 4.
+      action.fulfill()
+      // 5.
+      callManager.remove(call: call)
+    }
 }
 
