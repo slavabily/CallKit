@@ -47,6 +47,30 @@ class CallsViewController: UITableViewController {
   }
   
   @IBAction private func unwindForNewCall(_ segue: UIStoryboardSegue) {
+    
+    // 1.
+    guard
+      let newCallController = segue.source as? NewCallViewController,
+      let handle = newCallController.handle
+      else {
+        return
+    }
+      
+    let videoEnabled = newCallController.videoEnabled
+        
+    // 2.
+    let backgroundTaskIdentifier =
+      UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+      AppDelegate.shared.displayIncomingCall(
+        uuid: UUID(),
+        handle: handle,
+        hasVideo: videoEnabled
+      ) { _ in
+        UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+      }
+    }
   }
 }
 

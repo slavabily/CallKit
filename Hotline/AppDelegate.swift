@@ -37,7 +37,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return UIApplication.shared.delegate as! AppDelegate
   }
   
+  var providerDelegate: ProviderDelegate!
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
+    providerDelegate = ProviderDelegate(callManager: callManager)
+    
     return true
+  }
+  
+  func displayIncomingCall(
+    uuid: UUID,
+    handle: String,
+    hasVideo: Bool = false,
+    completion: ((Error?) -> Void)?
+  ) {
+    providerDelegate.reportIncomingCall(
+      uuid: uuid,
+      handle: handle,
+      hasVideo: hasVideo,
+      completion: completion)
   }
 }

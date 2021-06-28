@@ -388,7 +388,7 @@
 				DEVELOPMENT_TEAM = L6T2S9K4GS;
 				INFOPLIST_FILE = Hotline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Hotline;
+				PRODUCT_BUNDLE_IDENTIFIER = com.slavabily.Hotline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -408,7 +408,7 @@
 				DEVELOPMENT_TEAM = L6T2S9K4GS;
 				INFOPLIST_FILE = Hotline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Hotline;
+				PRODUCT_BUNDLE_IDENTIFIER = com.slavabily.Hotline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

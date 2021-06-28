@@ -30,6 +30,7 @@ import AVFoundation
 import CallKit
 
 class ProviderDelegate: NSObject {
+    
   // 1.
   private let callManager: CallManager
   private let provider: CXProvider
@@ -77,6 +78,39 @@ class ProviderDelegate: NSObject {
         // 4.
         completion?(error)
       }
+    }
+}
+
+// MARK: - CXProviderDelegate
+extension ProviderDelegate: CXProviderDelegate {
+    func providerDidReset(_ provider: CXProvider) {
+        stopAudio()
+        
+        for call in callManager.calls {
+            call.end()
+        }
+        
+        callManager.removeAllCalls()
+    }
+    
+    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+        // 1.
+        guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
+            action.fail()
+            return
+        }
+        
+        // 2.
+        configureAudioSession()
+        // 3.
+        call.answer()
+        // 4.
+        action.fulfill()
+    }
+    
+    // 5.
+    func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
+        startAudio()
     }
 }
 
