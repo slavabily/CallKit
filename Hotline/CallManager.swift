@@ -79,7 +79,19 @@ class CallManager {
     
     requestTransaction(transaction)
   }
-
+  
+  func startCall(handle: String, videoEnabled: Bool) {
+    // 1
+    let handle = CXHandle(type: .phoneNumber, value: handle)
+    // 2
+    let startCallAction = CXStartCallAction(call: UUID(), handle: handle)
+    // 3
+    startCallAction.isVideo = videoEnabled
+    let transaction = CXTransaction(action: startCallAction)
+    
+    requestTransaction(transaction)
+  }
+  
   // 3.
   private func requestTransaction(_ transaction: CXTransaction) {
     callController.request(transaction) { error in
